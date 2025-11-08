@@ -641,7 +641,7 @@ Let's configure eBGP! To get you started, here's the topology, but now with AS n
 Since we're going to be delving into a new topic with BGP, here are some helpful pointers to get you started!
 
 
-> [!TIP] Tips for both node types
+> [!TIP]
 > Both:
 > - You will need to configure eBGP on the link between leaf1 and leaf2
 > - To establish an eBGP session, you will need to configure: the router-id, the local AS number, the neighbor peer IP address, and the neighbor peer AS
