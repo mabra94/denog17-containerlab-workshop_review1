@@ -138,7 +138,7 @@ Armed with this topology diagram and the [Containerlab topology format definitio
 If you are already familiar with the Containerlab basics and want to skip over this exercise, you'll find the solution right here:
 
 <details>
-<summary>Task 1.3 solution</summary>
+<summary>✅ Task 1.3 solution</summary>
 
 ```yaml
 name: denog-workshop
@@ -451,7 +451,7 @@ Using the `-c` command-line flag in deploy and destroy commands removes the lab 
 Once you are done with adding the startup configuration files to the topology, it's time to redeploy again! Pinging should still work :)
 
 <details>
-<summary>Task 1.5 solution</summary>
+<summary>✅ Task 1.5 solution</summary>
 
 ```yaml
 name: denog-workshop
@@ -535,9 +535,11 @@ For this workshop the recommended container image to be used as clients is `ghcr
 These clients will have L3 connectivity for now to our switches, so we should make sure they get IP addresses on their data plane interfaces assigned during the topology deployment.
     
 The leaf switches should also have the IPs configured on their client-facing interfaces, again, all done in the startup config!
-    
+
+> ✅ **Task 2.1 Solution**
+>     
 > <details>
-> <summary>Task 2.1 topology solution</summary>
+> <summary>Topology solution</summary>
 > 
 > ```yaml
 > name: denog-workshop
@@ -577,7 +579,7 @@ The leaf switches should also have the IPs configured on their client-facing int
 > 
 > </details>
 > <details>
-> <summary>Task 2.1 SRL config solution | leaf1.cli</summary>
+> <summary>SRL config solution | leaf1.cli</summary>
 > 
 > ```
 > set / interface ethernet-1/1 admin-state enable
@@ -597,7 +599,7 @@ The leaf switches should also have the IPs configured on their client-facing int
 > </details>
 >
 > <details>
-> <summary>Task 2.1 FRR config solution | leaf2.conf</summary>
+> <summary>FRR config solution | leaf2.conf</summary>
 > 
 > ```
 >     interface eth1 
@@ -710,8 +712,12 @@ Paths: (1 available, best #1, table default)
 ```
 </details>
 
+
+
+> ✅ **Task 2.2 Solution**
+> 
 > <details>
-> <summary>Task 2.2 SR Linux config solution | leaf1.cli</summary>
+> <summary>SRL config solution | leaf1.cli</summary>
 > 
 > ```
 > set / interface ethernet-1/1 admin-state enable
@@ -750,7 +756,7 @@ Paths: (1 available, best #1, table default)
 > </details>
 >
 > <details>
-> <summary>Task 2.2 FRR config solution | leaf2.conf</summary>
+> <summary>FRR config solution | leaf2.conf</summary>
 > 
 > ```
 >     interface eth1 
@@ -974,7 +980,8 @@ Try to get the following outputs:
 >[!TIP]
 > You can find an excellent write-up of the [SR Linux CLI capabilities here.](https://learn.srlinux.dev/get-started/cli/)
 
-> **Task 2.5 Solutions**
+
+> ✅ **Task 2.5 Solutions**
 > <details>
 > <summary>YAML interface counters</summary>
 > 
@@ -1261,8 +1268,10 @@ $ gnmic -a clab-denog-workshop-leaf1 -u admin -p NokiaSrl1! --skip-verify -e jso
     
 Now, the CLI command is really, really long... So let's create a [client configuration](https://gnmic.openconfig.net/user_guide/configuration_intro/) in `~/.gnmic.yaml` with the username, password, encoding and skip-verify set!
 
+> ✅ **Task 3.1 Solution**
+> 
 > <details>
-> <summary>Task 3.1 gNMIC config solution | ~/.gnmic.yaml</summary>
+> <summary>gNMIC config solution | ~/.gnmic.yaml</summary>
 > 
 > ```
 > username: admin
@@ -1566,8 +1575,10 @@ Now, to write a Prometheus configuration that works with the gNMIc endpoint we j
 - Matching scrape interval of 5s
 - A single static scrape target, `<ID>.ws.ip.horse:9273` 
 
+> ✅ **Task 3.2 Solution**
+> 
 > <details>
-> <summary>Task 3.2 Prometheus config solution | prometheus.yaml</summary>
+> <summary>Prometheus config solution | prometheus.yaml</summary>
 > 
 > ```yaml
 > global:
@@ -1631,8 +1642,10 @@ Once you are done with putting the topology together, try to deploy it and conne
     
 ![Prometheus metrics in the deployed topology](./images/prom-deployed.png)
 
+> ✅ **Task 3.3 Solution**
+> 
 > <details>
-> <summary>Task 3.3 Container topology w/ telemetry solution | workshop.clab.yaml</summary>
+> <summary>Container topology w/ telemetry solution | workshop.clab.yaml</summary>
 > 
 > ```yaml
 > name: denog-workshop
